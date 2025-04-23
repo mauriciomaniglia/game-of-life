@@ -1,6 +1,6 @@
-# game-of-life
-Conway's Game of life
+# Conway's Game of life
 
+![Project Demo](game-of-life.gif)
 
 ## Building the code
 
