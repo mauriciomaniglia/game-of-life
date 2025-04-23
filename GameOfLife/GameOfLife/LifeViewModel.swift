@@ -3,7 +3,7 @@ import SwiftUI
 @Observable class LifeViewModel {
     private(set) var isRunning: Bool
 
-    var lifeModel = LifeModel(cells: 10)
+    var lifeModel = LifeModel(cells: 50)
 
     init() {
         self.isRunning = false
@@ -13,7 +13,7 @@ import SwiftUI
         lifeModel.numberOfCycles
     }
 
-    func reset(gridSize: Int = 10) {
+    func reset(gridSize: Int = 50) {
         self.isRunning = false
         self.lifeModel = LifeModel(cells: gridSize)
     }
