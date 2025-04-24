@@ -23,40 +23,6 @@ struct GridView: View {
             #else
             .frame(width: 700, height: 700)
             #endif
-
-            Spacer()
-                .frame(height: 40)            
-
-            VStack {
-                Text("Number of Cycles: \(lifeViewModel.numberOfCycles)")
-                    .font(.custom("Helvetica Neue", size: 22, relativeTo: .largeTitle))
-                    .fontWeight(.bold)
-            }
-
-            HStack {
-                Button("Reset") { lifeViewModel.reset() }
-                    .disabled(lifeViewModel.isRunning)
-
-                Button("Step") { lifeViewModel.step() }
-                    .disabled(lifeViewModel.isRunning)
-            }
-
-            HStack {
-                Button("Start") {
-                    Task {
-                        await lifeViewModel.performNumberOfCycles(number: 1000)
-                    }
-                }
-                .disabled(lifeViewModel.isRunning)
-
-                Button("Stop") {
-                    Task {
-                        await lifeViewModel.stop()
-                    }
-                }
-                .disabled(!lifeViewModel.isRunning)
-
-            }
         }
     }
 }
